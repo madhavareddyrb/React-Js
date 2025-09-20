@@ -45,8 +45,6 @@ function App() {
 const removeCounter = () => {
   setCounter( (reCounter) => reCounter - 1)
   setCounter( (reCounter) => reCounter - 1)
-  setCounter( (reCounter) => reCounter - 1)
-
 }
 
   return (
