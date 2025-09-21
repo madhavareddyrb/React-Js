@@ -143,3 +143,14 @@ with Javascript :
 16.It takes all baching and it updates one by one 
 
 17.to avoid this we use a callback with counter increment
+
+
+## 03 TailwindProps 
+
+npm vite@latest
+
+1.create project has same as all
+
+2.Use these documentation to configure tailwind css https://tailwindcss.com/docs/installation/using-vite
+
+3.
