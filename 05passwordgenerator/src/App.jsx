@@ -1,6 +1,7 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 
 import './App.css'
+
 
 function App() {
   const [length, setLength] = useState(8)
@@ -8,11 +9,28 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false)
   const [password, setPassword] = useState('')
 
+  const passwordRef = useRef(null)
   const generatePassword = useCallback( () => {
       let pass = ""
       let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-  })
+      if(numberAllowed) str += "0123456789"
+      if(charAllowed) str += "!@#$%^&*()+"
 
+      for (let i = 1; i < length; i++) {
+       const char = Math.floor(Math.random() * str.length + 1)
+       pass += str.charAt(char)
+      
+      }
+      setPassword(pass)
+
+  },[length, numberAllowed, charAllowed])
+
+const copyPasswordToClipboard = () => {window.navigator.clipboard.writeText(password)
+  passwordRef.current?.select()
+  //passwordRef.current?.setSelectionRange(0,8) 
+}
+
+ useEffect (() => {generatePassword()},[length, numberAllowed, charAllowed])
 
 
   return (
@@ -25,10 +43,12 @@ function App() {
           className='outline-none w-full py-1 px-3 bg-white text-orange'
           placeholder='Password'
           readOnly
-          
+          ref={passwordRef}
           />
 
-          <button className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
+          <button
+          onClick={ () => {copyPasswordToClipboard()}} 
+          className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
 
         </div>
         <div className='flex text-sm gap-x-2'>
@@ -54,16 +74,13 @@ function App() {
             <input 
             type="checkbox"
             defaultChecked = {charAllowed}
-            onChange={ () => {setCharAllowed=> ((prev) => !prev)}}
+            onChange={ () => {setCharAllowed ((prev) => !prev)}}
             />
             <label htmlFor="charinpt">Character</label>
           </div>
-
         </div>
 
-
       </div>
-
 
   )
 

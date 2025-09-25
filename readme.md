@@ -209,8 +209,6 @@ How we can render again and again or  keep on runing and ruing on every click so
 
 2.Define useSates for length,password,number,character,
 
-
-
 5.input field has a value of password variable and it with readOnly field 
 
 6.copy button 
@@ -219,7 +217,14 @@ How we can render again and again or  keep on runing and ruing on every click so
 
 8.Input field for length we can set min, max, value(length)  and onChange we need to setLength using event and label for length and pass length variable.
 
-9.If something doing again and again we use useCallback hook 
+# useCallback: https://react.dev/reference/react/useCallback
+React Compiler automatically memoizes values and functions, reducing the need for manual useCallback calls. You can use the compiler to handle memoization automatically.
+
+9.useCallback(fn, dependencies) accepts 2 parameters a function and things what is going to change and we can't change rapidiy to may values so we came with useEffect here to run the function again and again with differnt values
+
+# useEffect: https://react.dev/reference/react/useEffect
+
+10.useEffect: Run piece of code, on different conditions, we chnage, length,include numbers and character 
 
 
 
