@@ -153,4 +153,39 @@ npm vite@latest
 
 2.Use these documentation to configure tailwind css https://tailwindcss.com/docs/installation/using-vite
 
-3.
+# Passing Props to a Component
+React components use props to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+
+# Component :
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+
+Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.
+
+The default props, which are passed to the component when it is rendered, are defined in the component's file. You can override the default props by passing them to the component when you render it.
+
+
+
+# 04:BgChanger:
+
+#  here We learn how to use tailwind in react and useState and onClick() function
+
+1.Create Project npm create  vite@latest set up the project and install dependencies
+
+2.remove all app.jsx code and create a div 
+
+3.create 2 buttons inside another div with bottom 
+
+4.To change bg we use useSate to set color Const[color,setColor] = useState('blue')
+
+5.here color is variable and setColor is a method to change color we must use setColor(color) to chnage color
+
+6.to change color we can create an function chnagecolor(ccolor) we use setColor inside functtion to changecolor 
+
+7.On main div we pass color variable using style tag inside div.
+
+8.to change color on click we use onClick() function  
+
+9.You cannot pass the function call directly, like onClick={changeColor("red")}, because it would execute the function immediately when the component renders, not only when the button is clicked.
+
+10.You use an arrow function (() => changeColor("red")) to pass a function reference that only executes the changeColor("red") call when the click event actually occurs.
+
