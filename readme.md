@@ -189,3 +189,37 @@ The default props, which are passed to the component when it is rendered, are de
 
 10.You use an arrow function (() => changeColor("red")) to pass a function reference that only executes the changeColor("red") call when the click event actually occurs.
 
+
+## 05: Password Changer
+
+Before moving the featurs are :
+
+A slider for changing length of passowrd,copy button copy the password and highlets text to confirm the text is copied,2 checkboxs to include numbers and characters, a input box to display text
+
+how website/componets load how password is generated and re runs gain and again the code to get password
+
+# Memoization concept:
+
+How we can render again and again or  keep on runing and ruing on every click so these is call memonization and MOsts of the methods in the memory.
+
+
+# STEPS:
+
+1.Project setup nd tailwind setup using js
+
+2.Define useSates for length,password,number,character,
+
+
+
+5.input field has a value of password variable and it with readOnly field 
+
+6.copy button 
+
+7.Second div for length,number,character checkboes
+
+8.Input field for length we can set min, max, value(length)  and onChange we need to setLength using event and label for length and pass length variable.
+
+9.If something doing again and again we use useCallback hook 
+
+
+
